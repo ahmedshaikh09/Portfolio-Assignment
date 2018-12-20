@@ -22,14 +22,14 @@ self.addEventListener('install', (event) => {
             return cache.addAll(
                 [   
                     '/',
-                    'imgs/hero.jpg',
-                    'imgs/img.jpg',
-                    'imgs/img2.jpg',
-                    'imgs/img3.jpg',
-                    'imgs/logo.jpg',
-                    'js/app.js',
-                    'styles.css',
-                    'index.html'
+                    './imgs/hero.jpg',
+                    './imgs/img.jpg',
+                    './imgs/img2.jpg',
+                    './imgs/img3.jpg',
+                    './imgs/logo.jpg',
+                    './js/app.js',
+                    './styles.css',
+                    './index.html'
                 ]
             );
         })
