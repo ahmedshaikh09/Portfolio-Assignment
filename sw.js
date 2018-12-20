@@ -21,7 +21,7 @@ self.addEventListener('install', (event) => {
         caches.open(staticCache).then(function (cache) {
             return cache.addAll(
                 [   
-                    '/',
+                    './',
                     './imgs/hero.jpg',
                     './imgs/img.jpg',
                     './imgs/img2.jpg',
