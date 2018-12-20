@@ -1,3 +1,20 @@
+let staticCache = 'my-cache-1'
+
+self.addEventListener('activate', event => {
+    event.waitUntil(
+        caches.keys().then(function (cacheNames) {
+            return Promise.all(
+                cacheNames.filter(function (cacheName) {
+                    return cacheName.startsWith("my-") && cacheName != staticCache
+                }).map(function (cacheName) {
+                    return cache.delete(cacheName);
+                })
+
+            );
+        })
+    );
+});
+
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(staticCache).then(function (cache) {
