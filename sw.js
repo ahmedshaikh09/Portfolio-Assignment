@@ -1,4 +1,5 @@
-let staticCache = 'my-cache-1'
+let staticCache = 'my-cache-1';
+
 
 self.addEventListener('activate', event => {
     event.waitUntil(
@@ -19,18 +20,21 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(staticCache).then(function (cache) {
             return cache.addAll(
-                [
-                    '/imgs/*.jpg',
-                    '/js/app.js',
-                    '/styles.css',
+                [   
                     '/',
-                    '/index.html'
+                    'imgs/hero.jpg',
+                    'imgs/img.jpg',
+                    'imgs/img2.jpg',
+                    'imgs/img3.jpg',
+                    'imgs/logo.jpg',
+                    'js/app.js',
+                    'styles.css',
+                    'index.html'
                 ]
             );
         })
     );
 });
-
 
 self.addEventListener('fetch', (event) => {
     event.respondWith(
